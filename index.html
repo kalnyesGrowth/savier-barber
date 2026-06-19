@@ -110,7 +110,7 @@ nav.scrolled{background:rgba(10,10,15,.95)}
 .timeline{position:relative;max-width:700px;margin:60px auto 0}
 .timeline-line{position:absolute;left:24px;top:0;width:6px;height:100%;background:var(--white-10);border-radius:3px;overflow:hidden}
 .timeline-progress{position:absolute;left:24px;top:0;width:6px;height:0;border-radius:3px;transition:height .1s linear;background:repeating-linear-gradient(-45deg,#C41E3A 0px,#C41E3A 6px,#FFFFFF 6px,#FFFFFF 12px,#1E3A8A 12px,#1E3A8A 18px,#FFFFFF 18px,#FFFFFF 24px);background-size:100% 34px}
-.timeline-scissors{position:absolute;left:27px;width:90px;height:90px;transform:translate(-50%,-10px);z-index:10;transition:top .1s linear;filter:drop-shadow(0 4px 12px rgba(200,200,220,.4))}
+.timeline-scissors{position:absolute;left:27px;width:90px;height:90px;transform:translate(-50%,-10px);z-index:10;transition:top .1s linear;filter:drop-shadow(0 4px 16px rgba(196,30,58,.5))}
 
 /* BARBER POLE */
 .barber-pole{display:inline-block;position:relative;vertical-align:middle}
@@ -379,26 +379,24 @@ footer{background:var(--bg);border-top:1px solid var(--white-10);padding:60px 5%
     <!-- SCISSORS SVG -->
     <svg class="timeline-scissors" id="timelineScissors" viewBox="0 0 80 100" fill="none">
       <defs>
-        <linearGradient id="bladeGrad" x1="0" y1="0" x2="1" y2="1">
-          <stop offset="0%" stop-color="#D0D0D8"/>
-          <stop offset="30%" stop-color="#E8E8EE"/>
-          <stop offset="50%" stop-color="#F8F8FC"/>
-          <stop offset="70%" stop-color="#E0E0E6"/>
-          <stop offset="100%" stop-color="#B8B8C0"/>
+        <linearGradient id="bladeGrad" x1="0" y1="0" x2="1" y2="0">
+          <stop offset="0%" stop-color="#E8E8E8"/>
+          <stop offset="40%" stop-color="#F5F5F5"/>
+          <stop offset="100%" stop-color="#CCCCCC"/>
         </linearGradient>
       </defs>
       <g id="bladeLeft">
-        <ellipse cx="18" cy="15" rx="12" ry="9" stroke="#A0A0A8" stroke-width="2" fill="rgba(200,200,210,.15)"/>
-        <path d="M25 24 L44 55 L44 92" stroke="url(#bladeGrad)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-        <path d="M44 92 L46 95 L42 95 Z" fill="#D0D0D8"/>
+        <ellipse cx="18" cy="85" rx="12" ry="9" stroke="#C41E3A" stroke-width="2.5" fill="rgba(196,30,58,.1)"/>
+        <path d="M25 76 L44 45 L44 8" stroke="url(#bladeGrad)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+        <path d="M44 8 L46 5 L42 5 Z" fill="#E0E0E0"/>
       </g>
       <g id="bladeRight">
-        <ellipse cx="62" cy="15" rx="12" ry="9" stroke="#A0A0A8" stroke-width="2" fill="rgba(200,200,210,.15)"/>
-        <path d="M55 24 L36 55 L36 92" stroke="url(#bladeGrad)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-        <path d="M36 92 L38 95 L34 95 Z" fill="#D0D0D8"/>
+        <ellipse cx="62" cy="85" rx="12" ry="9" stroke="#C41E3A" stroke-width="2.5" fill="rgba(196,30,58,.1)"/>
+        <path d="M55 76 L36 45 L36 8" stroke="url(#bladeGrad)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+        <path d="M36 8 L38 5 L34 5 Z" fill="#E0E0E0"/>
       </g>
-      <circle cx="40" cy="55" r="4" fill="#C0C0C8" stroke="#909098" stroke-width="1.5"/>
-      <circle cx="40" cy="55" r="1.5" fill="#F5F5F8"/>
+      <circle cx="40" cy="45" r="4" fill="#C41E3A" stroke="#8B1225" stroke-width="1.5"/>
+      <circle cx="40" cy="45" r="1.5" fill="#F5F5F5"/>
     </svg>
 
     <div class="timeline-step">
@@ -708,9 +706,9 @@ if(timeline&&timelineProgress&&scissors){
     const leftAngle=baseClose+snipAmount;
     const rightAngle=-(baseClose+snipAmount);
     bladeLeft.style.transform='rotate('+leftAngle+'deg)';
-    bladeLeft.style.transformOrigin='40px 55px';
+    bladeLeft.style.transformOrigin='40px 45px';
     bladeRight.style.transform='rotate('+rightAngle+'deg)';
-    bladeRight.style.transformOrigin='40px 55px';
+    bladeRight.style.transformOrigin='40px 45px';
 
     steps.forEach((step,i)=>{
       const stepR=step.getBoundingClientRect();
