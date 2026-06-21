@@ -105,6 +105,20 @@ nav.scrolled{background:rgba(10,10,15,.95)}
 .service-card-name{font-family:var(--font-heading);font-size:var(--text-xl);font-weight:600;margin-bottom:8px}
 .service-card-desc{font-size:var(--text-sm);color:var(--white-50);line-height:1.6}
 
+/* BARBERS */
+.barbers-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:48px}
+.barber-card{background:var(--bg-card);border:1px solid var(--white-10);border-radius:6px;overflow:hidden;text-align:center;transition:transform .4s,box-shadow .4s}
+.barber-card:hover{transform:translateY(-6px);box-shadow:0 20px 60px rgba(0,0,0,.4);border-color:rgba(196,30,58,.15)}
+.barber-card-img{height:340px;overflow:hidden}
+.barber-card-img img{width:100%;height:100%;object-fit:cover;transition:transform .6s}
+.barber-card:hover .barber-card-img img{transform:scale(1.05)}
+.barber-card-body{padding:28px 20px}
+.barber-card-name{font-family:var(--font-heading);font-size:var(--text-xl);font-weight:600;margin-bottom:4px}
+.barber-card-role{font-size:var(--text-xs);font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--red);margin-bottom:12px}
+.barber-card-desc{font-size:var(--text-sm);color:var(--white-50);line-height:1.6;margin-bottom:20px}
+.barber-card-cta{display:inline-block;background:transparent;border:1.5px solid var(--red);color:var(--white);padding:12px 28px;border-radius:4px;font-family:var(--font-body);font-size:var(--text-sm);font-weight:600;letter-spacing:.06em;text-transform:uppercase;transition:all .3s;cursor:pointer}
+.barber-card-cta:hover{background:var(--red);color:var(--white)}
+
 /* PROCESS / TIMELINE */
 .process{background-image:url('https://images.pexels.com/photos/17665771/pexels-photo-17665771.jpeg?auto=compress&cs=tinysrgb&w=1260')}
 .timeline{position:relative;max-width:700px;margin:60px auto 0}
@@ -226,6 +240,8 @@ footer{background:var(--bg);border-top:1px solid var(--white-10);padding:60px 5%
   .nav-cta{display:none}
   .about-grid{grid-template-columns:1fr;gap:32px}
   .services-grid{grid-template-columns:1fr}
+  .barbers-grid{grid-template-columns:1fr}
+  .barber-card-img{height:280px}
   .reviews-grid{grid-template-columns:1fr}
   .location-grid{grid-template-columns:1fr}
   .footer-grid{grid-template-columns:1fr;gap:24px}
@@ -241,6 +257,7 @@ footer{background:var(--bg);border-top:1px solid var(--white-10);padding:60px 5%
 }
 @media(min-width:769px) and (max-width:1024px){
   .services-grid{grid-template-columns:repeat(2,1fr)}
+  .barbers-grid{grid-template-columns:repeat(2,1fr)}
   .reviews-grid{grid-template-columns:repeat(2,1fr)}
 }
 </style>
@@ -271,6 +288,7 @@ footer{background:var(--bg);border-top:1px solid var(--white-10);padding:60px 5%
   </a>
   <ul class="nav-links" id="navLinks">
     <li><a href="#servicios">Servicios</a></li>
+    <li><a href="#barberos">Barberos</a></li>
     <li><a href="#proceso">Proceso</a></li>
     <li><a href="#galeria">Galeria</a></li>
     <li><a href="#resenas">Resenas</a></li>
@@ -361,6 +379,44 @@ footer{background:var(--bg);border-top:1px solid var(--white-10);padding:60px 5%
       <div class="service-card-body">
         <div class="service-card-name">Extensiones</div>
         <div class="service-card-desc">Extensiones de cabello natural con tecnicas que garantizan un resultado invisible y duradero. Volumen y largo al instante.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BARBERS -->
+<section class="section bg-section" id="barberos" style="background-image:url('https://images.pexels.com/photos/1813272/pexels-photo-1813272.jpeg?auto=compress&cs=tinysrgb&w=1260')">
+  <div class="section-center">
+    <div class="section-label reveal">Nuestro Equipo</div>
+    <h2 class="section-title reveal">Conoce a tu barbero</h2>
+    <p class="section-desc reveal">Elige al profesional que mejor se adapte a tu estilo. Cada uno de nuestros barberos tiene su propia especialidad.</p>
+  </div>
+  <div class="barbers-grid">
+    <div class="barber-card reveal">
+      <div class="barber-card-img"><img src="https://images.pexels.com/photos/3998429/pexels-photo-3998429.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Lisandy - Barbero" loading="lazy"></div>
+      <div class="barber-card-body">
+        <div class="barber-card-name">Lisandy</div>
+        <div class="barber-card-role">Fundador / Barbero Principal</div>
+        <div class="barber-card-desc">Especialista en degradados y cortes de precision. Mas de 10 anos de experiencia creando estilos unicos para cada cliente.</div>
+        <a href="https://wa.me/34682654636?text=Hola,%20quiero%20reservar%20una%20cita%20con%20Lisandy" class="barber-card-cta" target="_blank" rel="noopener">Reserva conmigo</a>
+      </div>
+    </div>
+    <div class="barber-card reveal">
+      <div class="barber-card-img"><img src="https://images.pexels.com/photos/3998417/pexels-photo-3998417.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Barbero 2" loading="lazy"></div>
+      <div class="barber-card-body">
+        <div class="barber-card-name">Carlos</div>
+        <div class="barber-card-role">Barbero Senior</div>
+        <div class="barber-card-desc">Experto en arreglo de barba y afeitado clasico con navaja. Su atencion al detalle transforma cada visita en una experiencia premium.</div>
+        <a href="https://wa.me/34682654636?text=Hola,%20quiero%20reservar%20una%20cita%20con%20Carlos" class="barber-card-cta" target="_blank" rel="noopener">Reserva conmigo</a>
+      </div>
+    </div>
+    <div class="barber-card reveal">
+      <div class="barber-card-img"><img src="https://images.pexels.com/photos/7697395/pexels-photo-7697395.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Barbero 3" loading="lazy"></div>
+      <div class="barber-card-body">
+        <div class="barber-card-name">Miguel</div>
+        <div class="barber-card-role">Estilista / Coloracion</div>
+        <div class="barber-card-desc">Domina las tendencias actuales en coloracion y cortes creativos. Su vision artistica lleva tu estilo al siguiente nivel.</div>
+        <a href="https://wa.me/34682654636?text=Hola,%20quiero%20reservar%20una%20cita%20con%20Miguel" class="barber-card-cta" target="_blank" rel="noopener">Reserva conmigo</a>
       </div>
     </div>
   </div>
